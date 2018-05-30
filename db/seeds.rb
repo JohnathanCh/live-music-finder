@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+  10.times do
+    Artist.create(name: Faker::Music.band)
+  end
+
+  10.times do
+    User.create(name: Faker::Name.name, age: rand(18..100), email: Faker::Internet.email)
+  end
+
+  coachella = Event.create(name: "Coachella")
+  elec_picnic = Event.create(name: "Electric Picnic")
+  elec_pickle = Event.create(name: "Electric Pickle")
+  woodstock = Event.create(name: "Woodstock")
+  lollapalooza = Event.create(name: "Lollapalooza")
+
+
+  10.times do
+    UserEvent.create(user: User.all.sample, event: Event.all.sample)
+  end
+
+  10.times do
+    Performance.create(event: Event.all.sample, artist: Artist.all.sample)
+  end
