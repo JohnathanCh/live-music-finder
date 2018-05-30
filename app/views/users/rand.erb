@@ -1,0 +1,13 @@
+<%= navbar fixed: :top do %>
+  <%= navbar_collapse do %>
+    <%= navbar_group class: 'navbar', id: 'menu' do %>
+      <div class="pick_an_option" style="color: white;">
+        Pick an option:
+      </div>
+      <%= navbar_item "Artists", artists_path %>
+      <%= navbar_item "Events", events_path %>
+      <%= navbar_item "Login", login_path %>
+      <%= navbar_item "Logout", logout_path %>
+    <% end %>
+  <% end %>
+<% end %>
