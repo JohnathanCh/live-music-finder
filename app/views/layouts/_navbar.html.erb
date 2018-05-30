@@ -1,25 +1,41 @@
-require 'rails_bootstrap_navbar'
-
-<%= navbar fixed: :top do %>
-  <%= navbar_collapse do %>
-    <%= navbar_group class: 'foo', id: 'menu' do %>
-      = text_field 'Pick an option:'
-      = navbar_item "Home", '/home'
-      = navbar_item "About Us", '/about-us'
-      = navbar_item '/contact' do
-        %span.glyphicon.glyphicon-hand-right
-        Contact Us!
-      = navbar_dropdown "Stuff" do
-        = navbar_dropdown_header 'Great stuff!'
-        = navbar_item "One", '/one'
-        = navbar_item "Two", '/two'
-        = navbar_item "Three", '/three'
-        - if true # check if user is admin, maybe like "if current_user.try(:admin?)"
-          = navbar_dropdown_divider
-          = navbar_item "Admin Dashboard", '/admin'
-          = navbar_item "Users", '/admin/users'
-    = navbar_group align: 'right' do
-      - if true # check if user is logged in, maybe like "if current_user.present?"
-        = navbar_item "Log Out", '/logout'
-      - else
-        = navbar_item "Log In", '/login'
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/home" class="navbar-brand">My great app</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapsable">
+      <ul class="nav navbar-nav foo" id="menu">
+        <p class="navbar-text">Pick an option:</p>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/about-us">About Us</a></li>
+        <li>
+          <a href="/contact">
+            <span class='glyphicon glyphicon-hand-right'></span>
+            Contact Us!
+          </a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stuff <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Great stuff!</li>
+            <li><a href="/one">One</a></li>
+            <li><a href="/two">Two</a></li>
+            <li><a href="/three">Three</a></li>
+            <li class="divider"></li>
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" align="right">
+        <li><a href="/logout">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
