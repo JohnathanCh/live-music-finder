@@ -5,14 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'faker'
 
   10.times do
-    Artist.create(name: Faker::Music.band)
+    Artist.create(name: Faker::Music.unique.band)
   end
 
   10.times do
-    User.create(name: Faker::Name.name, age: rand(18..100), email: Faker::Internet.email)
+    User.create(name: Faker::Name.unique.name, age: rand(18..100), email: Faker::Internet.unique.email)
   end
 
   coachella = Event.create(name: "Coachella")
