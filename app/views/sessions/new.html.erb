@@ -2,11 +2,14 @@
 
 <h3>Login Please</h3>
 
-<%= form_for :user do |f| %>
-  <%= f.label_field :email, "Enter your email" %>
+<%= form_for @user, url: login_path(@user) do |f| %>
+  <%= f.label :email, "Enter your email" %>
   <%= f.text_field :email %>
 
-  <%= f.label_field :password, "Enter your Password" %>
+  <%= f.label :password, "Enter your Password" %>
   <%= f.password_field :password %>
+
   <%= f.submit "Login" %>
 <% end %>
+
+<%= link_to "Don't have an account? Create one!", signup_path %>

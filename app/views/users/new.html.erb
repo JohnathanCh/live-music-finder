@@ -15,18 +15,20 @@
   </div>
 <% end %>
 
-<%= form_for :user do |f| %>
-What's your name?
-  <%= f.text_field :name %>
+<%= form_for @user, url: signup_path(@user) do |f| %>
+  What's your name?
+    <%= f.text_field :name %>
 
-How about your email?
-  <%= f.text_field :email %>
+  How about your email?
+    <%= f.text_field :email %>
 
-  Lastly, how old are you?
-  <%= f.text_field :age %>
+    Lastly, how old are you?
+    <%= f.text_field :age %>
 
-Create a Password:
-  <%= f.password_field :password %>
+  Create a Password:
+    <%= f.password_field :password %>
 
   <%= f.submit "Signup" %>
 <% end %>
+
+<%= link_to "Already have an account? Sign in.", login_path %>
