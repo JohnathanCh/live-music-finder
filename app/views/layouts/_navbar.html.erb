@@ -13,12 +13,12 @@
         <a class="nav-link" href="/events">Events</a>
       </li>
     </ul>
-    
+
     <ul class="navbar-nav my-2 my-lg-0 mr-sm-2">
       <% if logged_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          User Profile
+          Hello, <%= current_user.name %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 

@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-  10.times do
+  100.times do
     Artist.create(name: Faker::Music.unique.band)
   end
 
-  10.times do
-    User.create(name: Faker::Name.unique.name, age: rand(18..100), email: Faker::Internet.unique.email)
+  100.times do
+    User.create(name: Faker::Name.unique.name, age: rand(18..100), email: Faker::Internet.unique.email, password: "12345")
   end
 
   coachella = Event.create(name: "Coachella")
@@ -20,12 +20,15 @@ require 'faker'
   elec_pickle = Event.create(name: "Electric Pickle")
   woodstock = Event.create(name: "Woodstock")
   lollapalooza = Event.create(name: "Lollapalooza")
+  warped = Event.create(name: "Warped Tour")
+  oz_fest = Event.create(name: "Oz Fest")
+  rbc = Event.create(name: "Rubyists Benefit Concert")
 
 
-  10.times do
+  100.times do
     UserEvent.create(user: User.all.sample, event: Event.all.sample)
   end
 
-  10.times do
+  100.times do
     Performance.create(event: Event.all.sample, artist: Artist.all.sample)
   end

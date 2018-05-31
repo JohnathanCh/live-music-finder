@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show]
   resources :users, only: [:show]
 
+  root to: "static#welcome"
+
   get '/signup', to: "users#new", as: 'signup'
   post '/signup', to: "users#create"
 
@@ -11,4 +13,9 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
 
   post '/logout', to: "sessions#logout", as: 'logout'
+
+  post '/add_event', to: "users#add_event", as: 'add_event'
+
+
+
 end

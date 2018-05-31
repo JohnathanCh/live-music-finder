@@ -9,13 +9,15 @@ class SessionsController < ApplicationController
 
     @user = User.find_by(email: user_params[:email])
 
-    if @user.authenticate(user_params[:password])
+    if @user != nil && @user.authenticate(user_params[:password])
       session[:user_id] = @user.id
 
       redirect_to events_path
     else
+      @user = User.new
+      @user.valid?
 
-      render login_path
+      render 'new'
     end
   end
 

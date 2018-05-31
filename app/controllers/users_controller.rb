@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @events = @user.events
+
+    @artists = @user.event_artists
   end
 
 #Sign up a new user
@@ -28,8 +30,12 @@ class UsersController < ApplicationController
       end
   end
 
-  def method_name
+  def add_event
+
+    event = Event.find(params[:event_id])
     current_user.events << event
+
+    redirect_to user_path(current_user)
   end
 
 
