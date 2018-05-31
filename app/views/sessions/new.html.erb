@@ -1,0 +1,12 @@
+<h1>Welcome to our App!</h1>
+
+<h3>Login Please</h3>
+
+<%= form_for :user do |f| %>
+  <%= f.label_field :email, "Enter your email" %>
+  <%= f.text_field :email %>
+
+  <%= f.label_field :password, "Enter your Password" %>
+  <%= f.password_field :password %>
+  <%= f.submit "Login" %>
+<% end %>
