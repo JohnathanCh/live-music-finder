@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
 
   def show
     @user = User.find(params[:id])
@@ -7,16 +8,17 @@ class UsersController < ApplicationController
 #Sign up a new user
   def new
     @user = User.new
+
   end
 
 #creates a new user
-  def signup
+  def create
     # byebug
       @user = User.new(user_params)
 
       if @user.valid?
         @user.save
-
+        session[:user_id] = @user.id
         redirect_to @user
       else
 
@@ -24,22 +26,23 @@ class UsersController < ApplicationController
       end
   end
 
-  def login
-
-  end
-
-#logout the user
-  def destroy
-    session[:name] = params[:name]
-
-    if session[:name] == nil || params[:name].empty?
-
-      redirect_to login_path
-    else
-
-      session.delete :name
-    end
-  end
+#   def login
+#     session[:user_id] = params[:user][:id]
+#
+#     if session[:user_id] == nil || params[:user][:id].empty?
+#
+#       redirect_to login_path
+#     else
+#
+#       #redirect_to homepage
+#     end
+#
+#   end
+#
+# #logout the user
+#   def logout
+#     session.delete :user_id
+#   end
 
   private
 

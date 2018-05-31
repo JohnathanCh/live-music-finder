@@ -3,7 +3,9 @@ class User < ApplicationRecord
   has_many :events, through: :user_events
 
   validates :name, presence: true
-  validates :name, uniqueness: true
+
+  validates :email, presence: true
+  validates :email, uniqueness: true
 
   validates :age, presence: true
   validates :age, numericality: true
