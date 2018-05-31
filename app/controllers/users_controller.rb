@@ -1,27 +1,31 @@
 class UsersController < ApplicationController
 
-
-
   def show
-
+    @user = User.find(params[:id])
   end
 
 #Sign up a new user
   def new
-
+    @user = User.new
   end
 
 #creates a new user
-  def create
-      session[:name] = params[:name]
+  def signup
+    # byebug
+      @user = User.new(user_params)
 
-      if session[:name] == nil || session[:name].empty?
+      if @user.valid?
+        @user.save
 
-        redirect_to login_path
+        redirect_to @user
       else
 
-        redirect_to user_path
+        render :new
       end
+  end
+
+  def login
+
   end
 
 #logout the user
@@ -41,5 +45,9 @@ class UsersController < ApplicationController
 
   def require_login
     return head(:forbidden) unless session.include? :name
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :age)
   end
 end

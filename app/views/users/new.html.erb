@@ -1,6 +1,29 @@
 <h1>Sign Up!</h1>
 
-<%= form_tag controller: 'users', action: 'create', method: 'post' do %>
-  <input type="text" name="name">
-  <input type="submit" value="Login">
+<% if @user.errors.any? %>
+  <div id="error_explanation" style="background-color: red; color: white;">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this article from being saved:
+    </h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for :user do |f| %>
+What's your name?
+  <%= f.text_field :name %>
+
+How about your email?
+  <%= f.text_field :email %>
+
+Lastly, how old are you?
+  <%= f.text_field :age %>
+
+  <%= f.submit "Signup" %>
 <% end %>
