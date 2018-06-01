@@ -1,12 +1,13 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, :only => [:new, :create]
 
+#form for creating new user
   def new
     @user = User.new
   end
 
+#post for creating a new user
   def create
-
     @user = User.find_by(email: user_params[:email])
 
     if @user != nil && @user.authenticate(user_params[:password])

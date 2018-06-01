@@ -1,13 +1,21 @@
-<h1>Welcome to our App!</h1>
-
-<h3>Login Please</h3>
+<div>
+<h1 class="text-center badge-secondary">Welcome to our App!</h1>
+<br>
+<h3 class="flexBox text-center badge-secondary" style="background-color: #6c757d;
+color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">Login Below Please</h3>
 
 <% if @user.errors.any? %>
   <div id="error_explanation" style="background-color: red; color: white">
     <p>Password Email combination isn't valid. Please enter your login information or <a href="/signup" style="background-color: black; color: white;">Signup</a> for an account</p>
   </div>
 <% end %>
+<br>
 
+
+<div class="text-center">
 <%= form_for @user, url: login_path do |f| %>
   <%= f.label :email, "Enter your email"%>
   <%= f.text_field :email, require: true  %>
@@ -18,4 +26,8 @@
   <%= f.submit "Login" %>
 <% end %>
 
+<br>
+
 <%= link_to "Don't have an account? Create one!", signup_path %>
+
+</div>

@@ -1,4 +1,19 @@
-<h1><%= @artist.name %></h1>
+<div>
 
-<h3>Performing at:</h3>
+<h1 class="text-center badge-secondary">
+    <%= @artist.name %></h1>
+
+  <br>
+
+<h3 class="flexBox text-center badge-secondary" style="background-color: lightgrey;
+color: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">
+    Performing at:</h3>
+
+    <br>
+    
 <%= render @events %>
+
+</div>

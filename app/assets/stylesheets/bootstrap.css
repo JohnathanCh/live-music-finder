@@ -1513,6 +1513,11 @@ pre code {
   }
 }
 
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}
+
 .table {
   width: 100%;
   max-width: 100%;
@@ -6585,6 +6590,7 @@ button.bg-dark:focus {
   -ms-flex-line-pack: end !important;
   align-content: flex-end !important;
 }
+form-group text-center
 
 .align-content-center {
   -ms-flex-line-pack: center !important;

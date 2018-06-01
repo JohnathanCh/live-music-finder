@@ -1,6 +1,6 @@
 class Artist < ApplicationRecord
   extend SearchHelper
-  
+
   has_many :performances
   has_many :events, through: :performances
 

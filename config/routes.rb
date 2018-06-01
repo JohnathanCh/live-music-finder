@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   root to: "static#welcome"
+  get '/stats', to: "static#stats", as: 'stats'
 
   get '/signup', to: "users#new", as: 'signup'
   post '/signup', to: "users#create"

@@ -2,7 +2,7 @@
   <li>
     <%= link_to event.name, event_path(event) %>
     <ul>
-      <% event.artists.each do |artist| %>
+      <% event.artists.uniq.each do |artist| %>
       <li>
         <%= artist.name %>
       </li>

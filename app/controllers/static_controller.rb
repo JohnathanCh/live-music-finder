@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
-  skip_before_action :require_login, only: :welcome
+  skip_before_action :require_login, only: [:welcome]
 
+  #root welcome page
   def welcome
 
   end
@@ -13,5 +14,12 @@ class StaticController < ApplicationController
     @events = Event.search(query)
     @users = User.search(query)
   end
+
+#show stats about our app
+def stats
+  @most_users = Event.most_users
+
+end
+
 
 end

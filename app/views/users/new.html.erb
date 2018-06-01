@@ -1,4 +1,4 @@
-<h1>Sign Up!</h1>
+<h1 class="text-center badge-secondary">Sign Up!</h1>
 
 <% if @user.errors.any? %>
   <div id="error_explanation" style="background-color: red; color: white;">
@@ -15,6 +15,8 @@
   </div>
 <% end %>
 
+<br>
+
 <%= form_for @user, url: signup_path(@user) do |f| %>
   What's your name?
     <%= f.text_field :name %>
@@ -30,5 +32,10 @@
 
   <%= f.submit "Signup" %>
 <% end %>
+<div class="text-center">
+
+  <br>
 
 <%= link_to "Already have an account? Sign in.", login_path %>
+
+</div>
