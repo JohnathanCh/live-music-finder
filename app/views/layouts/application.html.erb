@@ -7,33 +7,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <style media="screen">
-    body {
-    height: 100%;
-    background-color:#0896;
-    height: 100%;
-    }
-
-    .bg {
-    /* The image used */
-    background-image: url('../../assets/images/coachella-1.jpg');
-
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
-    </style>
   </head>
 
   <body>
-    <div>
     <%= render "layouts/navbar" %>
     <%= yield %>
-  </div>
   </body>
 </html>
