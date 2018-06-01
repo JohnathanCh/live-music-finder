@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend SearchHelper
+
   has_secure_password
 
   has_many :user_events
@@ -16,7 +18,6 @@ class User < ApplicationRecord
   # instance methods
 
   def event_artists
-
     self.events.map do |event|
       event.artists
     end.flatten.uniq
@@ -25,19 +26,15 @@ class User < ApplicationRecord
   # class methods
 
   def self.most_events
-
     self.all.sort_by do |user|
       user.events.count
     end.reverse[0..4]
-
    end
 
    def self.oldest_user
-
      self.all.sort_by do |user|
        user.age
      end.reverse[0..4]
-
    end
 
    def self.youngest_user
@@ -47,7 +44,7 @@ class User < ApplicationRecord
    end
 
    def self.search(query)
-
+     self.where('lower(name) LIKE :contains_query OR lower(email) = :query', query: query, contains_query: contains(query))
    end
 
 end
