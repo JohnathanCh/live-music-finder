@@ -1,14 +1,37 @@
-<h1>Name:<%= @user.name %></h1>
+<div class="col-xl" style="background-color:#0896;">
 
-<h3>Email:<%= @user.email %></h3>
+<h1 class="text-center badge-secondary">Name:<%= @user.name %></h1>
 
-<h3>Age:<%= @user.age %></h3>
+<h3 class="flexBox text-center badge-secondary" style="background-color: #6c757d;
+color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">Email:<%= @user.email %></h3>
 
-<h3>My Events</h3>
+<h3 class="flexBox text-center badge-secondary" style="background-color: #6c757d;
+color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">Age:<%= @user.age %></h3>
+
+    <br><br><br><br>
+
+<h3 class="flexBox text-center badge-secondary" style="background-color: lightgrey;
+color: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">My Events</h3>
 
 <%= render @events.uniq %>
 
 
 
-<h3>Artists you will seen</h3>
+
+<h3 class="flexBox text-center badge-secondary" style="background-color: lightgrey;
+color: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">Artists you will seen</h3>
 <%= render @artists %>
+
+</div>
