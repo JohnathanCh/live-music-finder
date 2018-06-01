@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def search(query)
-
+    
   end
 
   private

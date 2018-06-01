@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 
   post '/add_event', to: "users#add_event", as: 'add_event'
 
-
+  get 'search(/:q)', to: "static#search", as: 'search'
 
 end
