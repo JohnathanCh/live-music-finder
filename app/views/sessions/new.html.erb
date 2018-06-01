@@ -2,6 +2,12 @@
 
 <h3>Login Please</h3>
 
+<% if @user.errors.any? %>
+  <div id="error_explanation" style="background-color: red; color: white">
+    <p>Password Email combination isn't valid. Please enter your login information or <a href="/signup" style="background-color: black; color: white;">Signup</a> for an account</p>
+  </div>
+<% end %>
+
 <%= form_for @user, url: login_path do |f| %>
   <%= f.label :email, "Enter your email"%>
   <%= f.text_field :email, require: true  %>
