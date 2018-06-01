@@ -1,0 +1,53 @@
+<div class="text-center">
+
+  <h1 class="badge-secondary">
+      Results for '<%= @query %>'</h1>
+
+  <br>
+
+  <h3
+    class = "flexBox badge-secondary"
+    style = "background-color: lightgrey;
+      color: black;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;"
+  >
+    Events:
+  </h3>
+
+  <br>
+
+  <%= render @events %>
+
+  <h3
+    class = "flexBox badge-secondary"
+    style = "background-color: lightgrey;
+      color: black;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;"
+  >
+    Artists:
+  </h3>
+
+  <br>
+
+  <%= render @artists %>
+
+  <!-- <h3
+    class = "flexBox badge-secondary"
+    style = "background-color: lightgrey;
+      color: black;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;"
+  >
+    Users:
+  </h3>
+
+  <br>
+
+  <%#= render @users %> -->
+
+</div>

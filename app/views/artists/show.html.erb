@@ -1,19 +1,23 @@
 <div class="text-center" id="artists-show">
 
-<h1 class="text-center badge-secondary">
-    <%= @artist.name %></h1>
+  <h1 class="badge-secondary">
+      <%= @artist.name %></h1>
 
   <br>
 
-<h3 class="flexBox text-center badge-secondary" style="background-color: lightgrey;
-color: black;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;">
-    Performing at:</h3>
+  <h3
+    class = "flexBox badge-secondary"
+    style = "background-color: lightgrey;
+      color: black;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;"
+  >
+    Performing at:
+  </h3>
 
-    <br>
+  <br>
 
-<%= render @events %>
+  <%= render @events %>
 
 </div>

@@ -7,12 +7,11 @@ class StaticController < ApplicationController
   end
 
   def search
-    query = URI.decode_www_form_component(params[:q]).strip
-    byebug
+    @query = URI.decode_www_form_component(params[:q]).strip
 
-    @artists = Artist.search(query)
-    @events = Event.search(query)
-    @users = User.search(query)
+    @artists = Artist.search(@query)
+    @events = Event.search(@query)
+    #@users = User.search(@query)
   end
 
 #show stats about our app
