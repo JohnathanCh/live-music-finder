@@ -13,7 +13,7 @@ class Artist < ApplicationRecord
     end
   end
 
-  def self.search
+  def self.search(query)
 
   end
 

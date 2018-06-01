@@ -46,7 +46,7 @@ class User < ApplicationRecord
      end[0..4]
    end
 
-   def self.search
+   def self.search(query)
 
    end
 

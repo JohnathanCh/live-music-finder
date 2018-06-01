@@ -8,7 +8,7 @@ class ArtistsController < ApplicationController
     @events = @artist.events
   end
 
-  def search
-    
+  def search(query)
+
   end
 end

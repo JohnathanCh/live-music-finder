@@ -38,8 +38,8 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def search
-    
+  def search(query)
+
   end
 
   private

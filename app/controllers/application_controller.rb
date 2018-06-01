@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     !!session[:user_id]
   end
 
-  def search
+  def search(query)
     #artists controller search
     #events controller search
     #users controller search
