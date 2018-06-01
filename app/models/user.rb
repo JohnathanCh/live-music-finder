@@ -28,7 +28,7 @@ class User < ApplicationRecord
 
    end
 
-   def self.oldest_user
+   def self.oldest_users
 
      self.all.sort_by do |user|
        user.age

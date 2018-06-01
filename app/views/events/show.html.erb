@@ -1,13 +1,27 @@
-<h1><%= @event.name %></h1>
+
+<div class="col-xl" style="background-color:#0896;">
+  <h1 class="text-center badge-secondary">
+    <%= @event.name %></h1>
 
 
-<h3>Performances by:</h3>
-<%= render @artists %>
+  <h3 class="flexBox text-center " style="background-color: lightgrey;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;">Performances by:</h3>
+  <%= render @artists %>
 
 
-<%= form_tag add_event_path do %>
-<input type="hidden" name="event_id" value="<%= @event.id %>">
-  <%= submit_tag "Add to Your Events" %>
-<% end %>
+
+<a href="<%= add_event_path %>">
+<button type="button" class="btn btn-outline-secondary">
+  <input type="hidden" name="event_id" value="<%= @event.id %>">
+  Add to Your Events
+  </button></a>
+
+
+</div>
+
+<a href="<%= login_path %>">
+  <button type="button" class="btn btn-outline-secondary">Login</button></a>
 
 <!-- form_for @user, :url => url_for(:controller => 'mycontroller', :action => 'myaction') -->

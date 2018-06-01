@@ -10,8 +10,6 @@ class Artist < ApplicationRecord
     end
   end
 
-  def method_name
 
-  end
 
 end

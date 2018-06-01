@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   root to: "static#welcome"
+  get '/stats', to: "static#stats", as: 'stats'
 
   get '/signup', to: "users#new", as: 'signup'
   post '/signup', to: "users#create"
@@ -15,7 +16,5 @@ Rails.application.routes.draw do
   post '/logout', to: "sessions#logout", as: 'logout'
 
   post '/add_event', to: "users#add_event", as: 'add_event'
-
-
 
 end

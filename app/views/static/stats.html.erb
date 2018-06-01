@@ -1,1 +1,55 @@
-#All them stats
+
+  <div class="col-xl" style="background-color:#0896;">
+    <h1 class="text-center badge-secondary">Check out these stats!</h1>
+    <br><br>
+<h2 class="flexBox text-center badge-secondary" style="
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">
+    The users attending the most events are:</h2>
+  <% User.most_events.each do |user| %>
+  <p class="text-center">
+    <%= "Name: #{user.name} Age: #{user.age} is attending #{user.events.count} events!"  %>
+  </p>
+  <% end %>
+
+  <br><br><br>
+
+
+<h2 class="flexBox text-center badge-secondary" style="
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">Our oldest users are:</h2>
+
+  <% User.oldest_users.each do |user| %>
+  <p class="text-center">
+    <%= "#{user.name} is #{user.age} years old! WOOF!!" %>
+  </p>
+  <% end %>
+
+<br><br><br>
+
+<h2 class="flexBox text-center badge-secondary" style="
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;">If you wanna find the hippest event, with the most attendees:</h2>
+
+<div class="text-center">
+  <%= link_to @most_users.name, event_path(@most_users) %>
+
+  <%= "would be the right choice then. It has #{@most_users.users.count} attendees!" %>
+
+</div>
+
+<br><br><br>
+
+
+  <h2 class="flexBox text-center badge-secondary" style="
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;">The most popular artist on our site is:</h2>
+  <div class="text-center" style="margin-bottom: 100px;">
+    <%= link_to Artist.most_events.name, artist_path(Artist.most_events) %>
+  </div>
+
+</div>
