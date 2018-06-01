@@ -2,6 +2,9 @@ class Artist < ApplicationRecord
   has_many :performances
   has_many :events, through: :performances
 
+  # instance methods
+
+  # class methods
 
   def self.most_events
 
@@ -10,7 +13,7 @@ class Artist < ApplicationRecord
     end
   end
 
-  def method_name
+  def self.search
 
   end
 

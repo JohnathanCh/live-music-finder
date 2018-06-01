@@ -7,4 +7,8 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @events = @artist.events
   end
+
+  def search
+    
+  end
 end

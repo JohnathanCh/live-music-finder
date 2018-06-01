@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
     !!session[:user_id]
   end
 
+  def search
+    #artists controller search
+    #events controller search
+    #users controller search
+  end
+
   private
 
   def require_login

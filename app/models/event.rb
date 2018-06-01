@@ -5,6 +5,9 @@ class Event < ApplicationRecord
   has_many :user_events
   has_many :users, through: :user_events
 
+  # instance methods
+
+  # class methods
 
   def self.most_users
 
@@ -17,6 +20,10 @@ class Event < ApplicationRecord
     self.all.max_by do |event|
       event.artists.count
     end
+  end
+
+  def self.search
+
   end
 
 end

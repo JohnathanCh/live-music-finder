@@ -13,12 +13,16 @@ class User < ApplicationRecord
   validates :age, numericality: true
   validates :age, inclusion: { in: (18..100), message: "You have to be at least 18 to sign up, sorry."}
 
+  # instance methods
+
   def event_artists
 
     self.events.map do |event|
       event.artists
     end.flatten.uniq
   end
+
+  # class methods
 
   def self.most_events
 
@@ -42,7 +46,8 @@ class User < ApplicationRecord
      end[0..4]
    end
 
+   def self.search
 
-
+   end
 
 end
