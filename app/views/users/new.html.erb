@@ -15,6 +15,8 @@
   </div>
 <% end %>
 
+<br>
+
 <%= form_for @user, url: signup_path(@user) do |f| %>
   What's your name?
     <%= f.text_field :name %>
@@ -31,6 +33,8 @@
   <%= f.submit "Signup" %>
 <% end %>
 <div class="text-center">
+
+  <br>
 
 <%= link_to "Already have an account? Sign in.", login_path %>
 
