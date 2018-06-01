@@ -44,7 +44,7 @@ class User < ApplicationRecord
    end
 
    def self.search(query)
-     self.where('lower(name) LIKE :contains_query OR lower(email) = :query', query: query, contains_query: contains(query))
+     self.where('lower(name) LIKE :contains_query OR lower(email) = :query', query: query.downcase, contains_query: contains(query))
    end
 
 end

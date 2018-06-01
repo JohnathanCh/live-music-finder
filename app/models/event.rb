@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  extend SearchHelper
+  
   has_many :performances
   has_many :artists, through: :performances
 
@@ -23,7 +25,7 @@ class Event < ApplicationRecord
   end
 
   def self.search(query)
-
+    self.where('lower(name) LIKE :contains_query', contains_query: contains(query))
   end
 
 end
