@@ -1,6 +1,6 @@
 
-<div class="text-center">
-  
+<div class="text-center" id="events-show">
+
   <h1 class="text-center badge-secondary">
     <%= @event.name %></h1>
 
@@ -9,8 +9,11 @@
   <h3 class="flexBox text-center " style="background-color: lightgrey;
       display: flex;
       flex-flow: row wrap;
-      justify-content: center;">Performances by:</h3>
-  <%= render @artists %>
+      justify-content: center;">
+      Performances by:</h3>
+
+        <%= render @artists %>
+
 
 <br><br>
 
