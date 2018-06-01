@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <style media="screen">
-    body, html {
+    body {
     height: 100%;
     background-color:#0896;
     height: 100%;
@@ -31,7 +31,7 @@
   </head>
 
   <body>
-    <div class="bg" style="background-color:#0896; height: 100%;">
+    <div>
     <%= render "layouts/navbar" %>
     <%= yield %>
   </div>
