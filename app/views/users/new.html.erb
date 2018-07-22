@@ -18,21 +18,28 @@
 <% end %>
 
 <br>
-
+<div style="color: white; background: rgb(0,0,0, 0.6); margin: auto; align-items: center; width: 400px; padding: 10px;">
 <%= form_for @user, url: signup_path(@user) do |f| %>
+
+  <div style="text-align: center;">
   What's your name?
+
     <%= f.text_field :name %>
+  <br>
 
   How about your email?
     <%= f.text_field :email %>
+  <br>
 
     Lastly, how old are you?
     <%= f.text_field :age %>
+  <br>
 
   Create a Password:
     <%= f.password_field :password %>
-
+  <br>
   <%= f.submit "Signup" %>
+  </div>
 <% end %>
 <div class="text-center">
 
@@ -40,5 +47,6 @@
 
 <%= link_to "Already have an account? Sign in.", login_path %>
 
+</div>
 </div>
 </div>

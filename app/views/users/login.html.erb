@@ -2,6 +2,7 @@
 
 <h3>Login Please</h3>
 
+<div style="color: white; background: rgb(0,0,0, 0.6); margin: auto; align-items: center; width: 400px; padding: 10px;">
 <%= form_for :user do |f| %>
   <%= f.label_field :name, "Enter your Name" %>
   <%= f.text_field :name %>
@@ -10,3 +11,4 @@
   <%#= f.password_field :password %>
   <%= f.submit "Login" %>
 <% end %>
+</div>

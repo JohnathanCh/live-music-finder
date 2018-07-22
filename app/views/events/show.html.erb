@@ -6,21 +6,24 @@
 
 <br><br>
 
+<%= form_tag add_event_path do %>
+  <input type="hidden" name="event_id" value="<%= @event.id %>">
+    <%= submit_tag "Add to Your Events" %>
+  <% end %>
+  
   <h3 class="flexBox text-center " style="background-color: lightgrey;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;">
       Performances by:</h3>
 
+      <div style="overflow-y: scroll; max-height: 500px; background: rgb(0, 0, 0, 0.4); width: 300px; justify-content: center; margin: auto;">
         <%= render @artists %>
-
+      </div>
 
 <br><br>
 
-  <%= form_tag add_event_path do %>
-  <input type="hidden" name="event_id" value="<%= @event.id %>">
-    <%= submit_tag "Add to Your Events" %>
-  <% end %>
+
 
 
 </div>

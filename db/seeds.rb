@@ -29,6 +29,6 @@ require 'faker'
     UserEvent.create(user: User.all.sample, event: Event.all.sample)
   end
 
-  100.times do
+  1000.times do
     Performance.create(event: Event.all.sample, artist: Artist.all.sample)
   end

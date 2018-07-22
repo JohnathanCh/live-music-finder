@@ -29,6 +29,19 @@ a {
   background: linear-gradient(to left, #CB604B, #AB18F4);
 }
 
+#b {
+  color: Black;
+  text-decoration: underline;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+  border-color: rgba(34, 34, 34, 0.1);
+  max-width: 500px;
+  margin: 25px auto 0;
+  border-width: 1px;
+  background: linear-gradient(to left, white, darkgrey);
+}
+
 a:hover, a:focus {
   color: #fcbd40;
 }
