@@ -1,24 +1,6 @@
-# README
+# Live Music Finder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Live Music Finder is a simple app meant to test our knowledge of Rails. The database is seeded with real bands, but we made up some of the festivals. You can use our search function to find musicians or festival names, that will both be listed under their specific header.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+When you find a festival you like, you can add it to your list of events and it will persist on the backend as an association.
